@@ -6,7 +6,7 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 17:09:09 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/10 01:07:01 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/10 13:30:52 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 int	ft_strlen(char *str)
 {
-	int	cont;
+	int	count;
 
-	cont = 0;
-	while (*str)
-	{
-		str++;
-		cont++;
-	}
-	return (cont);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }
+
 
 char	*ft_strcat(char *str, char *str2)
 {

@@ -6,7 +6,7 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:56:03 by bankai            #+#    #+#             */
-/*   Updated: 2022/05/10 01:39:21 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/10 13:28:01 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,4 @@ int	ft_atoi_base(char *str, char *base)
 	numb = convert_numb(str, base, size_b);
 	numb *= signal;
 	return (numb);
-}
-#include <stdio.h>
-
-int		ft_atoi_base(char *str, char *base);
-
-void	ft_atoi_base_test(char *str, char *base, int expected_number)
-{
-	int ft_buff;
-
-	ft_buff = ft_atoi_base(str, base);
-	if (ft_buff != expected_number)
-		printf("> KO, expected: %d got: %d\n", expected_number, ft_buff);
-	else
-		printf("> OK, result: %d\n", ft_buff);
 }

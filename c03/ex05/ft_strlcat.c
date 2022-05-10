@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 16:23:31 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/04/20 20:16:21 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:28:47 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	cont;
+	int	count;
 
-	cont = 0;
-	while (*str)
-	{
-		str++;
-		cont++;
-	}
-	return (cont);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }
 
 char	*ft_strncat(char *dest, char *src, unsigned int nb)

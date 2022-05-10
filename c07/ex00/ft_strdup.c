@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 22:33:17 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/04/23 06:02:42 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:30:21 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 int	ft_strlen(char *str)
 {
-	int	cont;
+	int	count;
 
-	cont = 0;
-	while (*str)
-	{
-		str++;
-		cont++;
-	}
-	return (cont);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }
+
 
 char	*ft_strdup(char *src)
 {

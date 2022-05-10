@@ -3,24 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 04:40:00 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/04/19 10:40:29 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:27:21 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	cont;
+	int	count;
 
-	cont = 0;
-	while (*str)
-	{
-		str++;
-		cont++;
-	}
-	return (cont);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)

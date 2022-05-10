@@ -3,22 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 16:12:22 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/04/14 19:04:50 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:26:48 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	cont;
+	int	count;
 
-	cont = 0;
-	while (*str)
-	{
-		str++;
-		cont++;
-	}
-	return (cont);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }
