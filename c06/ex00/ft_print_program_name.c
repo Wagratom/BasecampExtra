@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:24:43 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/04/22 00:43:47 by wwallas-         ###   ########.fr       */
+/*   Updated: 2022/05/10 15:12:30 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_argv(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (argv[0][i])

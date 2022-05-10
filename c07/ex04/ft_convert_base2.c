@@ -6,13 +6,9 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 13:17:55 by bankai            #+#    #+#             */
-/*   Updated: 2022/05/10 12:58:48 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/10 15:14:36 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
 
 int	count_numb(int nbr, int size)
 {
@@ -29,7 +25,7 @@ int	count_numb(int nbr, int size)
 	return (i);
 }
 
-char	*convert_base(int nbr, char *base, int size_b)
+char	*convert_base(long int nbr, char *base, int size_b)
 {
 	char	*result;
 	int		size_n;
@@ -39,8 +35,8 @@ char	*convert_base(int nbr, char *base, int size_b)
 	result[size_n] = '\0';
 	if (nbr < 0)
 	{
-		result[--size_n] = '-';
-		nbr = -nbr;
+		result[0] = '-';
+		nbr *= -1;
 	}
 	while (nbr)
 	{

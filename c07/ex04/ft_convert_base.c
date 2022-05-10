@@ -6,13 +6,11 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 12:18:15 by bankai            #+#    #+#             */
-/*   Updated: 2022/05/10 12:57:48 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/10 15:18:48 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*convert_base(int nbr, char *base, int size_b);
+#include <stdlib.h>
 
 int	check_base(char *s1)
 {
@@ -36,11 +34,11 @@ int	check_base(char *s1)
 	return (j);
 }
 
-int	convert_numb(char *str, char *base, int size)
+long int	convert_numb(char *str, char *base, int size)
 {
-	int	result;
-	int	flag;
-	int	j;
+	long int	result;
+	int			flag;
+	int			j;
 
 	result = 0;
 	flag = 0;
@@ -65,16 +63,52 @@ int	convert_numb(char *str, char *base, int size)
 	return (result);
 }
 
-char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+int	count_numb(int nbr, int size)
+{
+	int	i;
+
+	i = 0;
+	if (nbr < 0)
+		i++;
+	while (nbr)
+	{
+		i++;
+		nbr /= size;
+	}
+	return (i);
+}
+
+char	*convert_base(long int nbr, char *base, int size_b)
 {
 	char	*result;
-	int		size_bt;
-	int		size_bf;
-	int		signal;
-	int		numb;
+	int		size_n;
 
-	size_bt = check_base(base_to);
+	size_n = count_numb(nbr, size_b);
+	result = (char *) malloc(size_n + 1);
+	result[size_n] = '\0';
+	if (nbr < 0)
+	{
+		result[0] = '-';
+		nbr *= -1;
+	}
+	while (nbr)
+	{
+		result[--size_n] = base[nbr % size_b];
+		nbr /= size_b;
+	}
+	return (result);
+}
+
+char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+{
+	long int	numb;
+	int			size_bf;
+	int			size_bt;
+	int			signal;
+	char		*result;
+
 	size_bf = check_base(base_from);
+	size_bt = check_base(base_to);
 	if (size_bt <= 1 || size_bf <= 1)
 		return (0);
 	signal = 1;
@@ -88,15 +122,6 @@ char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 	}
 	numb = convert_numb(nbr, base_from, size_bf);
 	numb *= signal;
-	printf("numb line 91: %d\n", numb);
 	result = convert_base(numb, base_to, size_bt);
 	return (result);
-}
-
-int main()
-{
-	char	*result;
-
-	result = ft_convert_base("fd", "0123456789abcdef", "0123456789");
-	printf("%s", result);
 }
