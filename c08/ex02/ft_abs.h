@@ -6,15 +6,15 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 15:45:18 by bankai            #+#    #+#             */
-/*   Updated: 2022/04/27 16:09:19 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/11 02:56:15 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_MACRO_H
-# define MY_MACRO_H
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-#include <stdio.h>
+# include <stdio.h>
 
-#define ABS(value) (value < 0) ? (value * -1) : (value)
+# define ABS (value) (value < 0) ? (value * -1) : (value)
 
 #endif

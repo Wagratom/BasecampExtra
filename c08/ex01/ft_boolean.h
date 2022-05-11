@@ -6,7 +6,7 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 15:24:31 by bankai            #+#    #+#             */
-/*   Updated: 2022/04/27 15:30:34 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/11 03:02:06 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-typedef	enum
+typedef enum
 {
 	TRUE = 1,
 	FALSE = 0

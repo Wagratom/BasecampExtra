@@ -1,10 +1,22 @@
-#ifndef FUNCTIONS_H_INCLUDED
-#define FUNCTIONS_H_INCLUDED
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft.h                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/11 02:56:54 by bankai            #+#    #+#             */
+/*   Updated: 2022/05/11 02:57:23 by bankai           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_putchar(char c);
-void ft_swap(int *a, int *b);
-void ft_putstr(char *str);
-int ft_strlen(char *str);
-int ft_strcmp(char *s1, char *s2);
+#ifndef FT_H
+# define FT_H
 
-#endif // FUNCTIONS_H_INCLUDED
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
+
+#endif
