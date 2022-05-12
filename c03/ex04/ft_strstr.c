@@ -6,7 +6,7 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 04:40:00 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/10 13:27:21 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/11 03:05:09 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 char	*ft_strstr(char *str, char *to_find)
 {
 	int	a;
-	int	result;
 
 	if (to_find[0] == '\0')
 		return (str);
@@ -48,8 +47,7 @@ char	*ft_strstr(char *str, char *to_find)
 	{
 		if (*str == *to_find)
 		{
-			result = ft_strncmp(str, to_find, a);
-			if (result == 0)
+			if (!ft_strncmp(str, to_find, a))
 				return (str);
 		}
 		str++;
