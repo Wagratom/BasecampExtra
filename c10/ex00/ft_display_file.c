@@ -19,7 +19,7 @@ int ft_display_file(char *file)
     int     fd;
 	int		a;
 
-    fd = open(name_arq, O_RDONLY);
+    fd = open(file, O_RDONLY);
     if (fd == -1)
     {
         write(1, "Cannot read file.", 17);
