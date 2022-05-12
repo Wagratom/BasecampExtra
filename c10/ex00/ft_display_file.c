@@ -13,7 +13,7 @@ int ft_strlen(char *salve)
 }
 
 #include <stdio.h>
-int ft_display_file(char *name_arq)
+int ft_display_file(char *file)
 {
     char    buffer[4096];
     int     fd;
