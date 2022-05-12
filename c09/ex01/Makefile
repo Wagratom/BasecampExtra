@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bankai <bankai@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/12 14:51:17 by bankai            #+#    #+#              #
+#    Updated: 2022/05/12 17:38:09 by bankai           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 C_SORCS =	./srcs/ft_putchar.c ./srcs/ft_swap.c ./srcs/ft_putstr.c \
             ./srcs/ft_strlen.c ./srcs/ft_strcmp.c
 
@@ -25,4 +37,4 @@ fclean: clean
 
 re:	fclean all
 
-.PHONEY: all, clean fclean re
+.PHONEY: all clean fclean re .o
