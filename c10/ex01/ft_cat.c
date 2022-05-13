@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_display_file.c                                  :+:      :+:    :+:   */
+/*   ft_cat.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 14:04:56 by bankai            #+#    #+#             */
-/*   Updated: 2022/05/13 14:06:25 by bankai           ###   ########.fr       */
+/*   Created: 2022/05/12 17:43:16 by bankai            #+#    #+#             */
+/*   Updated: 2022/05/13 14:03:29 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h> 
-#include <unistd.h>
+#include "ft.h"
 
 int	ft_strlen(char *str)
 {
@@ -23,40 +22,53 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-int	ft_display_file(char *file)
+int	read_files(int fd)
 {
 	char	buffer[4096];
-	int		fd;
 	int		a;
 
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
-	{
-		write(1, "Cannot read file.", 17);
-		return (0);
-	}
-	a = 1;
+	a = read(fd, buffer, 4096);
+	buffer[a] = '\0';
 	while (a)
 	{
-		a = read(fd, buffer, 4096);
-		if (a < 0)
+		if (errno)
+		{
+			write(2, strerror(errno), ft_strlen(strerror(errno)));
 			return (0);
-		write(1, &buffer, a);
+		}
+		write(2, buffer, ft_strlen(buffer));
+		a = read(fd, buffer, 4096);
+		buffer[a] = '\0';
 	}
 	close(fd);
 	return (1);
 }
 
+int	open_files(char **files)
+{
+	int	fd;
+	int	i;
+
+	i = 0;
+	while (files[i])
+	{
+		fd = open(files[i], O_RDONLY);
+		if (errno)
+		{
+			write(2, "cat: ", 7);
+			write(2, strerror(errno), ft_strlen(strerror(errno)));
+			return (0);
+		}
+		read_files(fd);
+		i++;
+	}
+	return (1);
+}
+
 int	main(int argc, char *argv[])
 {
-	if (argc != 2)
-	{
-		if (argc < 2)
-			write(1, "File name missing.", 18);
-		else
-			write(1, "Too many arguments.", 19);
-		return (1);
-	}
-	ft_display_file(argv[1]);
+	if (argc < 2)
+		return (-1);
+	open_files(&argv[1]);
 	return (0);
 }

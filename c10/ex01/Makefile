@@ -5,22 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bankai <bankai@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/12 14:51:03 by bankai            #+#    #+#              #
-#    Updated: 2022/05/13 13:14:33 by bankai           ###   ########.fr        #
+#    Created: 2022/05/13 11:00:08 by bankai            #+#    #+#              #
+#    Updated: 2022/05/13 14:01:31 by bankai           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-C_SORCS = ft_display_file.c
+C_SOURCS	=	ft_cat.c
 
-CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CC			= 	gcc
+CFLAGS		+= 	-Wall -Wextra -Werror
 
-NAME = ft_display_file
+NAME		=	cat
 
+all: $(NAME)
 
-all: $(NAME);
-
-$(NAME): $(C_SORCS)
+$(NAME): $(C_SOURCS)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
@@ -29,4 +28,4 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-.PHONEY: all clean fclean
+.PHONEY: clean fclean all
