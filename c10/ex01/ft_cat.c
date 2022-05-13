@@ -6,11 +6,11 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:43:16 by bankai            #+#    #+#             */
-/*   Updated: 2022/05/13 14:03:29 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/13 15:36:22 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "cat.h"
 
 int	ft_strlen(char *str)
 {
