@@ -6,7 +6,7 @@
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:43:16 by bankai            #+#    #+#             */
-/*   Updated: 2022/05/13 15:36:22 by bankai           ###   ########.fr       */
+/*   Updated: 2022/05/14 11:32:52 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	read_files(int fd)
 		}
 		write(2, buffer, ft_strlen(buffer));
 		a = read(fd, buffer, 4096);
-		buffer[a] = '\0';
+		buffer[a + 1] = '\0';
 	}
 	close(fd);
 	return (1);
@@ -55,7 +55,7 @@ int	open_files(char **files)
 		fd = open(files[i], O_RDONLY);
 		if (errno)
 		{
-			write(2, "cat: ", 7);
+			write(2, "cat: ", 5);
 			write(2, strerror(errno), ft_strlen(strerror(errno)));
 			return (0);
 		}
