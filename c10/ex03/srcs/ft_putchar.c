@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 02:57:58 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/17 15:25:15 by bankai           ###   ########.fr       */
+/*   Created: 2022/04/07 02:17:41 by wwallas-          #+#    #+#             */
+/*   Updated: 2022/05/09 23:07:08 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	i;
-	int	result;
+#include <unistd.h>
 
-	result = 0;
-	i = 0;
-	while (i < 46341)
-	{
-		result = i * i;
-		if (result == nb)
-			return (i);
-		i++;
-	}
-	return (0);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

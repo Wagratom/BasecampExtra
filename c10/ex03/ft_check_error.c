@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_check_error.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 02:57:58 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/17 15:25:15 by bankai           ###   ########.fr       */
+/*   Created: 2022/05/16 16:49:17 by bankai            #+#    #+#             */
+/*   Updated: 2022/05/16 16:49:46 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	i;
-	int	result;
+#include "ft_hexdump.h"
 
-	result = 0;
-	i = 0;
-	while (i < 46341)
+int	check_error(void)
+{
+	if (errno)
 	{
-		result = i * i;
-		if (result == nb)
-			return (i);
-		i++;
+		write(2, "invalid argument: use: -c\n", 26);
+		return (1);
 	}
 	return (0);
 }

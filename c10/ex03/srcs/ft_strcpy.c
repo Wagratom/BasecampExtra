@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 02:57:58 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/17 15:25:15 by bankai           ###   ########.fr       */
+/*   Created: 2022/04/12 15:30:35 by wwallas-          #+#    #+#             */
+/*   Updated: 2022/04/23 04:37:03 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	i;
-	int	result;
+	int	count;
 
-	result = 0;
-	i = 0;
-	while (i < 46341)
+	count = 0;
+	while (src[count])
 	{
-		result = i * i;
-		if (result == nb)
-			return (i);
-		i++;
+		dest[count] = src[count];
+		count++;
 	}
-	return (0);
+	dest[count] = '\0';
+	return (dest);
 }

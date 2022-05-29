@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin_mod.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 02:57:58 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/17 15:25:15 by bankai           ###   ########.fr       */
+/*   Created: 2022/05/14 11:40:38 by bankai            #+#    #+#             */
+/*   Updated: 2022/05/22 00:01:51 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
-{
-	int	i;
-	int	result;
+#include "../ft_hexdump.h"
 
-	result = 0;
+char	*ft_strjoin(char *str1, char *str2)
+{
+	char	*result;
+	int		size_result;
+	int		i;
+	int		j;
+
+	size_result = ft_strlen(str1);
+	size_result += ft_strlen(str2);
+	result = (char *) malloc (size_result + 1);
 	i = 0;
-	while (i < 46341)
+	while (str1[i])
 	{
-		result = i * i;
-		if (result == nb)
-			return (i);
+		result[i] = str1[i];
 		i++;
 	}
-	return (0);
+	j = 0;
+	while (str2[j])
+	{
+		result[i + j] = str2[j];
+		j++;
+	}
+	result[i + j] = '\0';
+	return (result);
 }

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wwallas- <wwallas-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 02:57:58 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/17 15:25:15 by bankai           ###   ########.fr       */
+/*   Created: 2022/04/14 21:22:24 by wwallas-          #+#    #+#             */
+/*   Updated: 2022/04/22 19:42:11 by wwallas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	result;
+	int	count;
 
-	result = 0;
-	i = 0;
-	while (i < 46341)
+	count = 0;
+	while (s1[count] || s2[count])
 	{
-		result = i * i;
-		if (result == nb)
-			return (i);
-		i++;
+		if (s1[count] != s2[count])
+			return (s1[count] - s2[count]);
+		count++;
 	}
-	return (0);
+	return (s1[count] - s2[count]);
 }

@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bankai <bankai@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 02:57:58 by wwallas-          #+#    #+#             */
-/*   Updated: 2022/05/17 15:25:15 by bankai           ###   ########.fr       */
+/*   Created: 2022/04/11 16:12:22 by wwallas-          #+#    #+#             */
+/*   Updated: 2022/05/10 13:26:48 by bankai           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int	ft_strlen(char *str)
 {
-	int	i;
-	int	result;
+	int	count;
 
-	result = 0;
-	i = 0;
-	while (i < 46341)
-	{
-		result = i * i;
-		if (result == nb)
-			return (i);
-		i++;
-	}
-	return (0);
+	count = 0;
+	while (str[count])
+		count++;
+	return (count);
 }
